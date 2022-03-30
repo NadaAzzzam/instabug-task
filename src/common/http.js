@@ -27,49 +27,15 @@ base.interceptors.response.use(
   function(response) {
     // Any status code that lie within the range of 2xx cause this function to trigger
     // Do something with response data
-    store.dispatch("toggleShowPreloader");
 
-    if (response.config.method == "post") {
-      if (response.config && response.config.url.indexOf("login")) {
-        store.commit("SHOW_MESSAGE", {
-          text: "Added Successfully",
-          color: "success",
-          timeout: 3500,
-        });
-      }
-    }
-
-    if (response.config.method == "delete") {
-      store.commit("SHOW_MESSAGE", {
-        text: "Deleted Successfully",
-        color: "success",
-        timeout: 3500,
-      });
-    }
     store.dispatch("toggleHide");
-    return response.data.response;
+    return response.data;
   },
   function(error) {
 
  
-
-    store.dispatch("toggleHidePreloader");
-    if (error.response&&error.response.data.errors.length) {
-      store.commit("SHOW_MESSAGE", {
-        text: error.response.data.errors[0],
-        color: "red darken-2",
-        timeout: 3500,
-      });
-    } else {
-      store.commit("SHOW_MESSAGE", {
-        text: error.response.data.message,
-        color: "red darken-2",
-        timeout: 3500,
-      });
-
-  }
  
-  return Promise.reject(error.response.data);
+  return Promise.reject(error);
 
 }
 );

@@ -10,7 +10,7 @@
     </div>
     <div
       class="c-users-list__body"
-      v-show="employee.group"
+      v-show="!employee.length"
       v-for="(employee, i) in items"
       :key="i + 'user-list'"
     >
@@ -35,33 +35,11 @@
 
 <script>
 export default {
-  props: ["color", "homeList"],
+  props: ["items"],
 
   data: () => ({
-    items: [
-      {
-        group: 1,
-        email: "moses_mueller@zesla.com	",
-
-        start_date: new Date(),
-        performance_index: "0.12	",
-        profile: {
-          avatar: "https://i.pravatar.cc/64?img=24",
-          name: "nada",
-          address: "94 Dakota Place, Englevale, Connecticut	",
-
-          about:
-            "Minim nulla irure officia id consequat et minim aute aute veniam commodo. Laborum reprehenderit laboris voluptate culpa do minim enim do labore anim laborum do tempor.",
-        },
-      },
-    ],
-    group: null,
-    drawer: false,
-
-    mini: false,
-
-    listMenueUser: [{ title: "Home", icon: "mdi-home", to: "/admin" }],
-  }),
+  
+    }),
 };
 </script>
 

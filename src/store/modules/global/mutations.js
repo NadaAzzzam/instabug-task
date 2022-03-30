@@ -1,8 +1,8 @@
 
 export default {
  
-  SET_GRADES(state, grades) {
-    state.grades=grades
+  SET_EMPLOYEES(state, employees) {
+    state.employees=employees
   },
 
 }

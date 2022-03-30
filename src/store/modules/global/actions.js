@@ -1,20 +1,21 @@
-import global from "../../../services/global";
+import employees from "../../../services/employees";
 
 
 
 export default {
-  getGrades({ commit }) {
+  getAll({ commit }) {
     return new Promise((resolve, reject) => {
-      global
-        .getGrades()
+      employees
+        .getAll()
         .then((resp) => {
-            commit("SET_GRADES",  resp.response.data);
-            resolve( resp.response.data);
+          console.log( resp.employees);
+            commit("SET_EMPLOYEES",  resp.employees);
+            resolve(  resp.employees);
           
         })
-        .catch((resp) => {
+        .catch((err) => {
        
-          return reject(resp);
+          return reject(err);
         });
     });
   },
