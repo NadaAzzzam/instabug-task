@@ -1,0 +1,34 @@
+.btn {
+    &,
+    &:link,
+    &:visited {
+        text-transform: uppercase;
+        text-decoration: none;
+        padding: .6rem 1rem;
+        display: inline-block;
+        border-radius: .4rem;
+        transition: all .2s;
+        font-size: $font-size-root;
+   
+        min-width: 7rem;
+        //Change for the <button> element
+        border: none;
+        cursor: pointer;
+    }
+    
+  
+    
+  
+    &--primary {
+     
+        background-color: $color-primary-light;
+        color: $color-white;
+    }
+
+ 
+    
+   
+    
+  
+}
+

@@ -1,18 +1,22 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-import HomeView from "../views/HomeView.vue";
-import PageNotFound from "@/components/PageNotFound.vue";
+import SalesTeamList from "../views/SalesTeam/SalesTeamList.vue";
+import PageNotFound from "@/components/AppPageNotFound.vue";
 
 Vue.use(VueRouter);
 
 const routes = [
   {
-    path: "/",
-    name: "home",
+    path: "",
+    redirect: "/GetAll/SalesTeam",
+  },
+  {
+    path: "/GetAll/SalesTeam",
+    name: "get-sales-team",
     meta: {
-      title: "Home",
+      title: "Sales Team List",
     },
-    component: HomeView,
+    component: SalesTeamList,
   },
   {
     path: "/about",
