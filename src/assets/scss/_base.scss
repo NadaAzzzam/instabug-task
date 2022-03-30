@@ -1,0 +1,69 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  overflow-x: hidden;
+  font-size: 85.75%; /*(15/16px)*100 (rem)for G FS */
+
+  @include respond(tab-land) {
+    font-size: 87.5%; /*(14/16)*100 (rem)for G FS */
+  }
+  @include respond(tab-port) {
+    font-size: 81.25%; /*(13/16)*100 (rem)for G FS */
+  }
+
+  @include respond(big-desktop) {
+    font-size: 75%; /*(12/16)*100 (rem)for G FS */
+  }
+}
+
+body {
+  box-sizing: border-box;
+  overflow-x: hidden;
+  font-family: $body-font-family;
+}
+::selection {
+  background-color: $color-primary;
+  color: $color-white;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  transition: 0.1s ease-in-out;
+  display: none;
+  background: #d1d1d1;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-track {
+  transition: 0.1s ease-in-out;
+  display: none;
+
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-track:hover {
+  display: block;
+
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  display: block;
+}
+
+
+// GENERAL STYLES
+
+.highlight{
+  background-color: rgba(7, 4, 4, 0.664);
+  color: white;
+}

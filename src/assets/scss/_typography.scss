@@ -1,0 +1,79 @@
+body {
+    font-family:$body-font-family;
+    font-weight: 400;
+    /* font-size: 16px; */
+    line-height: 1.7;
+    color: $color-grey-dark;
+}
+*{
+    font-family:$body-font-family;
+}
+
+.heading-primary{
+    color: $color-white;
+    text-transform: uppercase;
+    backface-visibility: hidden;
+    margin-bottom: 6rem;
+
+    &--main{
+        display: block;
+        font-weight: 400;
+        font-size: 6rem;
+        letter-spacing: 3.5rem;  
+       animation: moveInLeft 1s ease-in-out;
+       @include respond(phone){
+        letter-spacing: 1rem;
+        font-size: 5rem;
+        }
+
+    }
+    &--sub{
+        display: block;
+        font-weight: 700;
+        font-size: 2rem;
+        letter-spacing: 1.75rem;
+        /* animation-name:;
+        animation-duration: ;
+       animation-timing-function: ; */
+       animation: moveInRight 1s ease-in-out;
+       @include respond(phone){
+        letter-spacing: .5rem;
+        }
+    }
+
+}
+
+.heading-secondary{
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 3.5rem;
+    display: inline-block;
+    text-align: center;
+    transition: all .2s ease-in-out;
+    @include respond(tab-port){
+        font-size:3rem;
+    }
+    @include respond(phone){
+        font-size:2.5rem;
+    }
+   
+    @include text-gradient;
+   &:hover{
+       transform: scale(1.1);
+      text-shadow: .5rem 1rem 2rem rgba($color-black,.2);
+   }
+
+}
+
+.heading-tertiary{
+    font-size: $default-FS;
+    font-weight: 700;
+    text-transform: uppercase;
+
+
+}
+.paragraph{
+    font-size: $default-FS;
+    margin-bottom: 3rem;
+
+}

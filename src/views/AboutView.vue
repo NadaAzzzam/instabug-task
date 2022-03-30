@@ -1,5 +1,5 @@
 <template>
   <div class="about">
-    <h1>This is an about page</h1>
-  </div>
+    <p  v-html="$options.filters.highlight('This is an about page ', 'a' )"></p>
+</div>
 </template>
