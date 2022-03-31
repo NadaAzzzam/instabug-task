@@ -7,9 +7,10 @@
         :key="i + 'pagination-list'"
         class="pagination-page__item"
       >
+      <!-- {{$route.query.page}} -->
         <a
           class="pagination-page__link"
-          :class="{ active: page == item }"
+          :class="{ active: item ==$route.query.page }"
           @click="page = item"
           >{{ item }}</a
         >
