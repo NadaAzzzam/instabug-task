@@ -58,7 +58,9 @@ export default {
           left: "center",
         },
         tooltip: {
-          trigger: "axis",
+          trigger: "item",
+          // formatter: "{b} <br/>{a} : {c}%",
+      
         },
         xAxis: {
           type: "category",
@@ -93,7 +95,7 @@ export default {
         },
         series: [
           {
-            name: "Electricity",
+            name: "Team Performance Index",
             type: "line",
             data: this.yAxisData,
             markArea: {

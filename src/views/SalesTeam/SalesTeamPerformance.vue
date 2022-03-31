@@ -3,9 +3,7 @@
     <div class="c-filters__container">
       <AppPerformanceDateFilter :minDate="minDate" :maxDate="maxDate" @getDateRange="getDateRange" />
     </div>
-    <!-- {{performanceList }} -->
-    {{ minDate }}
-    {{ maxDate }}
+
     <div class="c-dashboard__chart">
       <AppPerformanceChart
         v-if="performanceList"
