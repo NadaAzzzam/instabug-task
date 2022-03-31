@@ -39,8 +39,7 @@ export default {
     this.getPerformance(this.page);
   },
   methods: {
-    getPerformance(page) {
-      console.log(page);
+    getPerformance() {
 
       this.$store
         .dispatch("employees/getPerformance")
@@ -66,7 +65,6 @@ export default {
       return this.$store.state.employees.performance;
     },
     minDate() {
-      console.log(this.$store.state.employees.performance);
       return this.formatDate(
         new Date(
           Math.min(
@@ -78,7 +76,6 @@ export default {
       );
     },
     maxDate() {
-      console.log(this.$store.state.employees.performance);
       return this.formatDate(
         new Date(
           Math.max(

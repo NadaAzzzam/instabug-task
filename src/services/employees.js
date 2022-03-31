@@ -4,9 +4,14 @@ const employeesUrl = endpoints.EMPLOYESS;
 const performanceUrl = endpoints.PERFORMANCE;
 
 export default {
-  getAll() {
+  getAll(isPartTime,page) {
     return http
-      .get(employeesUrl)
+      .get(employeesUrl,{
+        params:{
+          isPartTime:isPartTime ,
+          page:page 
+        }
+      })
       .then((res) => {
         return res;
       });

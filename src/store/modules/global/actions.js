@@ -3,14 +3,13 @@ import employees from "../../../services/employees";
 
 
 export default {
-  getAll({ commit }) {
+  getAll({ commit },filters ) {
     return new Promise((resolve, reject) => {
       employees
-        .getAll()
+        .getAll(filters.isPartTime,filters.page)
         .then((resp) => {
-          console.log( resp.data.employees);
-            commit("SET_EMPLOYEES",  resp.data.employees);
-            resolve(  resp.data.employees);
+            commit("SET_EMPLOYEES",  resp.data);
+            resolve(  resp.data);
           
         })
         .catch((err) => {
