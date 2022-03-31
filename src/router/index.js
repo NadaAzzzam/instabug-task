@@ -19,16 +19,16 @@ const routes = [
     component: SalesTeamList,
   },
   {
-    path: "/about",
-    name: "about",
+    path: "/GetAll/SalesTeamPerformance",
+    name: "get-sales-team-performance",
     meta: {
-      title: "About",
+      title: "Sales Team Performance",
     },
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
     component: () =>
-      import(/* webpackChunkName: "about" */ "../views/AboutView.vue"),
+      import(/* webpackChunkName: "about" */ "../views/SalesTeam/SalesTeamPerformance.vue"),
   },
   // and finally the default route, when none of the above matches:
   { path: "*", component: PageNotFound, meta: {

@@ -1,15 +1,13 @@
 <template>
   <div class="c-dashboard">
-        <div class="c-filters__container">
-    <AppListSearchInput/>
-  </div>
-      <AppList  :items="employeesList"/>
+    <div class="c-filters__container">
+      <AppListSearchInput />
+    </div>
+    <AppList :items="employeesList" />
 
-       <div class="c-dashboard__footer">
-    <button class="btn btn--primary">
-      Load More
-    </button>
-  </div>
+    <div class="c-dashboard__footer">
+      <button class="btn btn--primary">Load More</button>
+    </div>
   </div>
 </template>
 
@@ -20,28 +18,26 @@ import AppList from "@/components/AppList.vue";
 import AppListSearchInput from "@/components/AppListSearchInput.vue";
 
 export default {
-  components: { AppList,AppListSearchInput },
-   data: () => ({
+  components: { AppList, AppListSearchInput },
+  data: () => ({
     page: 1,
   }),
-  created(){
-        if (!globalModule.isRegistered) {
+  created() {
+    if (!globalModule.isRegistered) {
       this.$store.registerModule("employees", globalModule);
       globalModule.isRegistered = true;
-
     }
     this.GetAll(this.page);
   },
-  
-  methods:{
-      GetAll(page) {
-        console.log(page);
-       
+
+  methods: {
+    GetAll(page) {
+      console.log(page);
+
       this.$store
         .dispatch("employees/getAll")
         .then((res) => {
           console.log(res);
-         
         })
         .catch((err) => {
           console.log(err);
@@ -49,41 +45,14 @@ export default {
         });
     },
   },
-    computed: {
+  computed: {
     employeesList() {
       return this.$store.state.employees.employees;
-    }
-    }
-}
+    },
+  },
+};
 </script>
 
-<style lang="scss"  scoped>
-
-////////////////////////////
-// Dashboard LIST STYLE
-.c-dashboard {
-  margin: 8px 16px;
-
-  &__header {
-    display: flex;
-    justify-content: center;
-  }
-
-  &__footer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-}
-
-
-////////////////////////////
-// Filters LIST STYLE
-.c-filters__container {
-  margin: 0 0 8px;
-  padding: 16px 8px;
-  border: 1px solid #dcdee3;
-  background-color: #e5e9f1;
-}
+<style lang="scss"  >
 
 </style>

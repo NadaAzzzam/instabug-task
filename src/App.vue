@@ -2,7 +2,7 @@
   <div id="app">
     <nav>
       <router-link to="/GetAll/SalesTeam">Home</router-link> |
-      <router-link to="/about">Team performance chart page</router-link>
+      <router-link to="/GetAll/SalesTeamPerformance">Team performance chart page</router-link>
     </nav>
     <div class="container-fluid">
     <router-view/>
@@ -26,7 +26,7 @@ nav {
     text-decoration: none;
     
 
-    &.router-link-exact-active {
+    &.router-link-exact-active , &.router-link-active {
     color: #0099ff;
   }
   }

@@ -29,7 +29,7 @@ base.interceptors.response.use(
     // Do something with response data
 
     store.dispatch("toggleHide");
-    return response.data;
+    return response;
   },
   function(error) {
 
