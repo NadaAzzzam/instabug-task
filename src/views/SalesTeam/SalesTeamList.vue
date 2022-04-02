@@ -22,7 +22,7 @@
     <p v-if="hideLoadMoreBtn">{{ hideLoadMoreBtn }}</p>
 
     <div v-if="!hideLoadMoreBtn && page != 7" class="c-dashboard__footer">
-      <button :disabled="loading" class="btn btn--primary" @click="onLoadaMore">Load More</button>
+      <button data-cy="loadmore" :disabled="loading" class="btn btn--primary" @click="onLoadaMore">Load More</button>
     </div>
   </div>
 </template>

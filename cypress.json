@@ -1,5 +1,9 @@
+
 {
   "pluginsFile": "tests/e2e/plugins/index.js",
-  "componentFolder": "tests/unit/components"
+
+  
+  "baseUrl": "https://fe-task.getsandbox.com"
+
 
 }

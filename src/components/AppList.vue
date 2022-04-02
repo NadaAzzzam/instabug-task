@@ -1,20 +1,20 @@
 <template>
-  <div class="c-users-list">
-    <div class="c-users-list__header">
-      <div>Employee</div>
-      <div>Email</div>
-      <div>Adress</div>
-      <div>Start Date</div>
-      <div>Performance Index</div>
-      <div>About</div>
-    </div>
-    <div
+  <table class="c-users-list">
+    <tr class="c-users-list__header">
+      <th>Employee</th>
+      <th>Email</th>
+      <th>Adress</th>
+      <th>Start Date</th>
+      <th>Performance Index</th>
+      <th>About</th>
+    </tr>
+    <tr
       class="c-users-list__body"
       v-show="!employee.length"
       v-for="(employee, i) in items"
       :key="i + 'user-list'"
     >
-      <div>
+      <td>
         <div class="c-users-list__main-info">
           <img
             class="c-users-list__avatar"
@@ -23,14 +23,14 @@
           />
           <div v-html="$options.filters.highlight(employee.profile.name, $route.query.filter)"></div>
         </div>
-      </div>
-      <div >{{ employee.email }}</div>
-      <div v-html="$options.filters.highlight(employee.profile.address, $route.query.filter)"></div>
-      <div>{{ employee.start_date | date }}</div>
-      <div>{{ employee.performance_index }}</div>
-      <div v-html="$options.filters.highlight(employee.profile.about, $route.query.filter)"></div>
-    </div>
-  </div>
+      </td>
+      <td >{{ employee.email }}</td>
+      <td v-html="$options.filters.highlight(employee.profile.address, $route.query.filter)"></td>
+      <td>{{ employee.start_date | date }}</td>
+      <td>{{ employee.performance_index }}</td>
+      <td v-html="$options.filters.highlight(employee.profile.about, $route.query.filter)"></td>
+    </tr>
+  </table>
 </template>
 
 <script>
